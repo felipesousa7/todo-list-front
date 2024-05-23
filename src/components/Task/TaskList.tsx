@@ -138,15 +138,16 @@ const TaskList: React.FC = () => {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - tasks.length) : 0;
 
   return (
-    <>
-      <Card
-        sx={{
-          boxShadow: 'none',
-          borderRadius: '10px',
-          p: '25px 20px 15px',
-          mb: '15px'
-        }}
-      >
+    <Box sx={{ height: '90vh', padding: '16px' }}>
+    <Card
+      sx={{
+        height:'100%',
+        boxShadow: 'none',
+        borderRadius: '10px',
+        p: '25px 20px 15px',
+        mb: '15px'
+      }}
+    >
         <Box
           sx={{
             display: 'flex',
@@ -179,11 +180,11 @@ const TaskList: React.FC = () => {
             color: '#fff !important'
           }}
         >
-          <AddIcon sx={{ position: 'relative', top: '-1px' }} /> Add Task
+          <AddIcon sx={{ position: 'relative', top: '-1px' }} /> Adicionar tarefa
         </Button>
 
-        <TableContainer component={Paper} sx={{ boxShadow: 'none' }}>
-          <Table sx={{ minWidth: 930 }} aria-label="custom pagination table">
+        <TableContainer component={Paper} sx={{ boxShadow: 'none'}}>
+          <Table sx={{ minWidth: 730 }} aria-label="custom pagination table">
             <TableHead sx={{ background: '#F7FAFF' }}>
               <TableRow>
                 <TableCell
@@ -295,7 +296,7 @@ const TaskList: React.FC = () => {
                   onPageChange={handleChangePage}
                   onRowsPerPageChange={handleChangeRowsPerPage}
                   ActionsComponent={(props) => (
-                    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
+                    <Box sx={{  display: 'flex' }}>
                       <IconButton
                         onClick={handleFirstPageButtonClick}
                         disabled={props.page === 0}
@@ -360,7 +361,7 @@ const TaskList: React.FC = () => {
       {selectedTask && (
         <EditTask open={openEdit} onClose={handleCloseEdit} onSubmit={handleSubmitEdit} task={selectedTask} />
       )}
-    </>
+    </Box>
   );
 };
 

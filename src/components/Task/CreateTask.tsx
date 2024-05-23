@@ -162,7 +162,7 @@ const CreateTask: React.FC<CreateTaskProps> = ({ open, onClose, onSubmit }) => {
                     color: '#fff !important'
                   }}
                 >
-                  <AddIcon sx={{ position: 'relative', top: '-1px' }} /> Add
+                  <AddIcon sx={{ position: 'relative', top: '-1px' }} /> Criar
                   Tarefa
                 </Button>
               </Grid>
